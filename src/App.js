@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SearchBox from "./SearchBox";
 import CardList from "./components/CardList";
+import Scroll from "./components/Scroll";
 
 class App extends Component {
     constructor() {
@@ -40,11 +41,13 @@ class App extends Component {
             )
         }else{
             return (
-                <div className='flex flex-col items-center'>
+                <div className='bg-blue-100 flex flex-col items-center'>
                     <h1 className="font-bold text-lg my-5 ">RoboFriends</h1>
                     <SearchBox searchChange={this.onSearchChange} />
                     <div className='my-5 h-1 w-full bg-gray-700'> </div>
-                    <CardList robots={filteredRobots} />
+                    <Scroll>
+                        <CardList robots={filteredRobots} />
+                    </Scroll>
                 </div>
             )
         }
