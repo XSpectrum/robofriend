@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import CardList from './components/CardList';
 import reportWebVitals from './reportWebVitals';
+import { robots } from './constants/robots';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <App />
+    <div className='flex flex-col items-center'>
+      <div className='my-1 h-1 w-full bg-gray-700'> </div>
+      <CardList robots={robots}/>
+    </div>
   </React.StrictMode>
 );
 
